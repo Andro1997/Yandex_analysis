@@ -1,0 +1,13 @@
+import pandas as pd
+
+music = [
+    ['Ozzy', 'Mirical man'],
+    ['Rammstein', 'Deutschland'],
+    ['Zak Wylde', 'Sold My Soul'],
+    ['Manowar', 'Die for metal'],
+    ['Quincy Jones', 'Keep Reachin'],
+]
+
+entries = ['artist', 'track']
+playlist = pd.DataFrame(data=music, columns=entries)
+print(playlist)
