@@ -1,0 +1,12 @@
+import pandas as pd
+
+df = pd.read_csv('music_log.csv')# link to file
+
+music_head = df.head(10) # start
+music_tail = df.tail(10) # end
+
+print(music_head)
+
+print()
+
+print(music_tail)
