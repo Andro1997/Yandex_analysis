@@ -23,3 +23,9 @@ bool	        bool	            Логический тип данных
 
 Всю информацию, которую предоставляют разные атрибуты DataFrame, можно получить вызовом одного-единственного метода info(). 
 df.info()
+
+import pandas as pd
+
+df = pd.read_csv('music_log.csv') # Link tp file
+shape_table = df.shape # take size file
+print('Размер таблицы:',shape_table)
