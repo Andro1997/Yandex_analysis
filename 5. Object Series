@@ -91,3 +91,32 @@ pop = df.loc[df['genre'] == 'pop']
 pop_time = pop.loc[:, 'total play']
 pop_haters = pop_time.loc[pop_time <= 5].count()
 print('Количество пропущенных треков жанра поп равно', pop_haters)
+
+#7
+Для обоих жанров посчитайте долю быстро пропущенных пользователями композиций в процентах. 
+Разделите количество треков, которые пользователи пропустили — соответственно rock_haters и pop_haters — на общее количество треков жанра рок и жанра поп.
+Общее количество треков жанра равно количеству наблюдений в таблицах rock и pop, т.е. значению атрибута shape[0] этих таблиц.
+Результаты сохраните в переменных rock_skip и pop_skip (от англ. skip, «пропуск»). 
+Выведите значения новых переменных с точностью до одного знака после запятой в такой форме:
+
+Доля пропущенных композиций жанра рок равна: ...
+
+Доля пропущенных композиций жанра поп равна: ...
+Вывод результата предыдущей задачи закомментируйте.
+
+import pandas as pd
+df = pd.read_csv('music_log.csv')
+
+rock = df.loc[df['genre'] == 'rock']
+rock_time = rock.loc[:, 'total play']
+rock_haters = rock_time.loc[rock_time <= 5].count()
+rock_skip = rock_haters / rock.shape[0]
+#print('Количество пропущенных треков жанра рок равно', rock_haters)
+print('Доля пропущенных композиций жанра рок равна: {:.1%}'.format(rock_skip))
+
+pop = df.loc[df['genre'] == 'pop']
+pop_time = pop.loc[:, 'total play']
+pop_haters = pop_time.loc[pop_time <= 5].count()
+pop_skip = pop_haters / pop.shape[0]
+#print('Количество пропущенных треков жанра поп равно', pop_haters)
+print('Доля пропущенных композиций жанра поп равна: {:.1%}'.format(pop_skip))
